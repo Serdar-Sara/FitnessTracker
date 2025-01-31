@@ -1,0 +1,29 @@
+﻿@model Fitness_Tracker.Models.Entities.Progress
+
+
+
+<h2>Add Progress</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Weight"></label>
+        <input asp-for="Weight" type="number" step="0.1" class="form-control" />
+        <span asp-validation-for="Weight" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BodyFatPercentage"></label>
+        <input asp-for="BodyFatPercentage" type="number" step="0.1" class="form-control" />
+        <span asp-validation-for="BodyFatPercentage" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Date"></label>
+        <input asp-for="Date" type="date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}

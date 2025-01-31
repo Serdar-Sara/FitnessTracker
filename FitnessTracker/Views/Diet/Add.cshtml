@@ -1,0 +1,26 @@
+﻿@model Fitness_Tracker.Models.Entities.Diet
+
+<h2>Add Diet</h2>
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="MealType"></label>
+        <input asp-for="MealType" class="form-control" />
+        <span asp-validation-for="MealType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CaloriesConsumed"></label>
+        <input asp-for="CaloriesConsumed" type="number" class="form-control" />
+        <span asp-validation-for="CaloriesConsumed" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Date"></label>
+        <input asp-for="Date" type="date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Get" class="btn btn-secondary">Cancel</a>
+</form>

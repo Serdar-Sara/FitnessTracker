@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Fitness_Tracker.Models.Entities.Exercise>
+
+
+
+<h2>Exercise List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Duration (min)</th>
+            <th>Calories Burned</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var exercise in Model)
+        {
+            <tr>
+                <td>@exercise.Id</td>
+                <td>@exercise.Name</td>
+                <td>@exercise.Duration</td>
+                <td>@exercise.CaloriesBurned</td>
+                <td>@exercise.Date.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@exercise.Id" class="btn btn-primary">Edit</a>
+                    <form asp-action="Delete" asp-route-id="@exercise.Id" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Add" class="btn btn-success">Add New Exercise</a>

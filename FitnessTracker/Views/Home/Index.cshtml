@@ -1,0 +1,15 @@
+﻿@using Fitness_Tracker.Models.Entities
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+
+<h2>Welcome to the Fitness Tracker!</h2>
+
+<!-- Show login button if the user is not logged in -->
+@if (!SignInManager.IsSignedIn(User))
+{
+    <a href="/Identity/Account/Login" class="btn btn-primary">Log In</a>
+}
+else
+{
+    <a href="/Identity/Account/Logout" class="btn btn-danger">Log Out</a>
+}
